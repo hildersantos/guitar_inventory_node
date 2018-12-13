@@ -1,0 +1,10 @@
+{
+  "name": "guitar-inventory",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Hilder Santos <hilder@hildersantos.com> (https://hildersantos.com)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
