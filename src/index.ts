@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 import path from "path";
+import * as sessionAuth from "./middleware/sessionAuth";
+import * as routes from "./routes";
 
 // Initialize config
 dotenv.config();
@@ -15,10 +17,11 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// Define route
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// Configure session auth
+sessionAuth.register(app);
+
+// Configure routes
+routes.register(app);
 
 // Start server
 app.listen(port, () => {
