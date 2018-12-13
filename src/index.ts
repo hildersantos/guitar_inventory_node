@@ -1,10 +1,15 @@
 import express from "express";
+import path from "path";
 const app = express();
 const port = 8080;
 
+// Configure Express to use EJS
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
 // Define route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.render("index");
 });
 
 // Start server
